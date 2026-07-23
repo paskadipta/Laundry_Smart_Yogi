@@ -12,8 +12,8 @@ function renderNavbar() {
                 
                 <!-- Sisi Tengah: Menu Teks -->
                 <ul class="nav-links">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Laundry Smart</a></li>
+                    <li><a href="../html/home.html">Home</a></li>
+                    <li><a href="../html/laundry.html">Laundry Smart</a></li>
                     <li><a href="">Paket Mitra</a></li>
                     <li><a href="">Kontak</a></li>
                 </ul>
