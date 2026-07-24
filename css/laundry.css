@@ -671,3 +671,169 @@ main {
 .line-right .line-active { transform-origin: left center; transform: scaleX(0); }
 .line-left .line-active { transform-origin: right center; transform: scaleX(0); }
 .line-down .line-active { transform-origin: top center; transform: scaleY(0); }
+
+
+/* =========================================
+   MOBILE LAYOUT RESPONSIVE (MAX 430PX)
+   ========================================= */
+@media (max-width: 430px) {
+    /* 1. MATIKAN OVERLAPPING DI HP AGAR SEMUA KARTU TERBACA FULL & JELAS */
+    /* MATIKAN STICKY CSS MURNI, GSAP YANG AKAN AMBIL ALIH OVERLAPPINGNYA */
+    .vm-section, 
+    .mengapa-section, 
+    .kerjasama-section, 
+    .timeline-section {
+        position: relative !important; 
+        top: auto !important;
+        bottom: auto !important;
+        padding: 90px 5% 120px !important; /* Padding bawah ekstra lega */
+        min-height: auto !important;
+        box-shadow: none !important;
+    }
+
+    /* 2. CONTAINER 1: VISI & MISI */
+    .vm-title { font-size: 2.2rem; }
+    .vm-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+
+    /* 2. CONTAINER 1: VISI & MISI */
+    .vm-title { font-size: 2.2rem; }
+    .vm-grid { 
+        grid-template-columns: 1fr; /* Berubah jadi 1 kolom (atas-bawah) */
+        gap: 30px; 
+    }
+    .vm-card { padding: 25px 20px; }
+    .vm-text-left { font-size: 1.05rem; }
+    
+    /* Merapikan Badge agar rata kiri semua di HP */
+    .badge-left, .badge-right { justify-content: flex-start; margin: 0 0 15px 0; }
+    .badge-left .vm-icon-circle, .circle-right { margin: 0 15px 0 0; } 
+    .badge-left h2, .badge-right h2 { padding: 8px 25px; font-size: 1.4rem; }
+    .line-left, .line-right { display: none; } /* Sembunyikan garis hiasan agar hemat ruang */
+    
+    /* Merapikan List Misi agar teksnya rata kiri di HP */
+    .list-right li { 
+        justify-content: flex-start; 
+        flex-direction: row-reverse; /* Pindahkan ikon ke kiri */
+        gap: 15px; 
+    }
+    .list-right p { text-align: left; font-size: 1rem; }
+
+    /* 3. CONTAINER 2: MENGAPA MEMILIH */
+    .mengapa-top { font-size: 1.4rem; }
+    .mengapa-bottom { font-size: 2.5rem; letter-spacing: 0; }
+    .mengapa-grid-5 { 
+        grid-template-columns: 1fr; /* 5 Card ditumpuk vertikal */
+        gap: 15px; 
+    }
+    .m-card-minimal { padding: 25px 20px; }
+
+    /* 4. CONTAINER 3: SISTEM KERJASAMA */
+    .kerjasama-title { font-size: 2.2rem; }
+    .kerjasama-container { padding: 25px 15px; }
+    .k-top-text { font-size: 1rem; padding-bottom: 20px; margin-bottom: 20px; }
+    .k-grid-split { 
+        grid-template-columns: 1fr; /* Kolom kiri & kanan ditumpuk */
+        gap: 20px; 
+    }
+    .k-row { 
+        padding: 15px; 
+        flex-direction: column; /* Ikon dan teks aturan ditumpuk */
+        text-align: center; 
+        gap: 15px; 
+    }
+    .k-content p { text-align: center; font-size: 1rem; }
+    .tahun-card { padding: 15px; }
+
+    /* 5. CONTAINER 4: TIMELINE */
+    .timeline-top { font-size: 1.4rem; }
+    .timeline-bottom { font-size: 1.8rem; }
+    
+    /* Mematikan sistem Grid dan mengubahnya jadi tumpukan Flex vertikal simpel */
+    .timeline-grid { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 30px; 
+    }
+    .t-node { width: 100%; }
+    
+    /* Sembunyikan garis desktop karena alur ularnya dimatikan */
+    .line-box { display: none !important; } 
+    
+    /* Reset posisi absolut pada teks Node 3 dan 6 agar kembali ke tengah */
+    .n3 h3, .n6 h3 { 
+        position: static; 
+        text-align: center; 
+        max-width: 100%; 
+        margin-top: 0; 
+    }
+    
+    .t-circle { margin-bottom: 15px; width: 65px; height: 65px; }
+    .t-node h3 { font-size: 1.1rem; }
+    
+    /* List deskripsi di node 4 */
+    .t-list { 
+        font-size: 0.9rem; 
+        padding-left: 0; 
+        text-align: left; 
+        display: inline-block; /* Membantu memusatkan list */
+    }
+
+    /* 5. CONTAINER 4: TIMELINE (PROFESSIONAL MOBILE LAYOUT) */
+    .timeline-top { font-size: 1.4rem; }
+    .timeline-bottom { font-size: 1.8rem; }
+    
+    .timeline-grid { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 40px; /* Jarak antar step */
+        position: relative;
+    }
+    
+    /* Ubah layout Node jadi menyamping (Kiri: Ikon, Kanan: Teks) */
+    .t-node { 
+        width: 100%;
+        flex-direction: row; 
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+    }
+    
+    .t-circle { 
+        margin-bottom: 0; 
+        width: 60px; 
+        height: 60px; 
+        flex-shrink: 0;
+        z-index: 2; /* Agar ikon berada di atas garis */
+    }
+    
+    .t-node h3 { 
+        font-size: 1.1rem; 
+        margin-top: 15px; /* Sejajarkan teks dengan tengah lingkaran */
+    }
+    
+    /* Merapikan posisi teks n3 dan n6 yang sebelumnya absolute di desktop */
+    .n3 h3, .n6 h3 { position: static; max-width: 100%; text-align: left; margin-top: 15px; }
+    
+    /* Merapikan list pada node ke-4 */
+    .t-list { padding-left: 20px; font-size: 0.9rem; margin-top: 10px; }
+    
+    /* MENGHIDUPKAN KEMBALI GARIS KHUSUS MOBILE */
+    .line-box { 
+        display: block !important; 
+        width: 4px !important;
+        height: calc(100% + 40px) !important; /* Tinggi node + jarak gap */
+        top: 30px !important; /* Mulai dari tengah lingkaran (60px/2) */
+        left: 28px !important; /* Tepat di tengah lingkaran */
+        right: auto !important; /* Matikan settingan desktop */
+        z-index: 1 !important;
+    }
+    
+    .line-active {
+        transform-origin: top center !important; /* Pastikan garis merambat ke bawah */
+    }
+    
+    .n7 .line-box { display: none !important; } /* Sembunyikan garis di node terakhir */
+}
