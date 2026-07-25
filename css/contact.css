@@ -1,0 +1,399 @@
+/* =========================================
+   GLOBAL STYLES HALAMAN KONTAK
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: clip;
+}
+
+main {
+    /* Mendorong konten turun agar tidak tertutup navbar */
+    padding-top: 100px; 
+}
+
+main > section {
+    position: relative;
+    top: 0; 
+}
+
+/* =========================================
+   LAYOUT UTAMA (RATA TENGAH SEMPURNA)
+   ========================================= */
+.kontak-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memaksa semua elemen di dalamnya lurus ke tengah */
+    padding: 80px 5% 120px;
+    background-color: #ffffff; /* Background putih sesuai permintaan */
+    min-height: calc(100vh - 100px);
+}
+
+/* =========================================
+   HEADER (JUDUL & DESKRIPSI)
+   ========================================= */
+.kontak-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    margin-bottom: 70px;
+}
+
+.kontak-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #111111;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+/* Teks Biru Sesuai Instruksi */
+.highlight-blue {
+    color: #007bff;
+}
+
+.kontak-desc {
+    font-size: 1.15rem;
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* =========================================
+   KARTU KONTAK (3 KOLOM)
+   ========================================= */
+.kontak-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Agar turun ke bawah kalau layarnya sempit (mobile) */
+    width: 100%;
+    max-width: 1100px;
+}
+
+.kontak-card {
+    background: #ffffff;
+    border: 1px solid #f0f0f0; /* Garis tepi super tipis agar misah dari background putih */
+    border-radius: 24px;
+    padding: 50px 30px 40px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Bayangan lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kontak-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   STYLE ICON & WARNA KOTAKNYA
+   ========================================= */
+.icon-wrapper {
+    width: 85px;
+    height: 85px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.icon-wrapper svg {
+    width: 36px;
+    height: 36px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Kotak Hijau Halus untuk WhatsApp */
+.icon-wa { 
+    background: #eaf8ee; 
+    color: #219653; 
+}
+
+/* Kotak Pink/Ungu Halus untuk Instagram */
+.icon-ig { 
+    background: #faeef3; 
+    color: #d13076; 
+}
+
+/* Kotak Kuning Halus untuk Website */
+.icon-web { 
+    background: #fff6e0; 
+    color: #d97736; /* Warna disesuaikan dengan referensi desain */
+}
+
+/* =========================================
+   TEKS DI DALAM KARTU
+   ========================================= */
+.kontak-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 12px;
+}
+
+.kontak-card p {
+    font-size: 1.05rem;
+    color: #666666;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+
+.card-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: #d97736; /* Warna oranye lembut seperti di referensi */
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #b35f29;
+}
+
+/* =========================================
+   SECTION 2: FORMULIR KONTAK
+   ========================================= */
+.form-section {
+    background-color: #007bff; /* Background biru sesuai instruksi */
+    padding: 100px 5% 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memastikan header dan card rata tengah */
+    min-height: 100vh;
+}
+
+/* Header Form (Judul & Deskripsi) */
+.form-header {
+    text-align: center;
+    color: #ffffff; /* Teks putih */
+    margin-bottom: 50px;
+}
+
+.form-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.form-desc {
+    font-size: 1.15rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* =========================================
+   KARTU FORMULIR
+   ========================================= */
+.form-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Shadow memisahkan card dari background biru */
+}
+
+/* Layout Grid untuk Input (2 Kolom) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi rata kiri dan kanan */
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.form-row.full-width {
+    grid-template-columns: 1fr; /* Khusus textarea memakan 1 kolom penuh */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Label Input */
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.form-group label span {
+    color: #e74c3c; /* Bintang merah muda untuk input wajib */
+}
+
+/* Styling Box Input, Select, & Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background-color: #fdfdfd; /* Putih tulang sangat tipis */
+    font-size: 1rem;
+    color: #333333;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* Efek saat diketik (Focus) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+/* Khusus Textarea (Pesan) */
+.form-group textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+/* =========================================
+   TOMBOL KIRIM PESAN
+   ========================================= */
+.btn-kirim {
+    background: linear-gradient(135deg, #007bff 0%, #99ccff 100%); 
+    color: #ffffff;
+    border: none;
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    
+    /* Memastikan teks dan ikon sejajar & rata tengah di dalam tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    
+    /* KUNCI POSISI TENGAH: Lebar menyesuaikan teks, lalu didorong ke tengah form */
+    width: fit-content;
+    margin: 15px auto 0;
+    
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); 
+    transition: all 0.2s ease; 
+}
+
+/* === EFEK KETIKA KURSOR MENGARAH KE TOMBOL === */
+.btn-kirim:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #66a3ff 100%);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* === EFEK KETIKA TOMBOL DIKLIK (MASUK KE DALAM) === */
+.btn-kirim:active {
+    transform: translateY(4px) scale(0.96); 
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); 
+}
+
+/* =========================================
+   RESPONSIVE MOBILE (MAX-WIDTH: 430px)
+   ========================================= */
+@media screen and (max-width: 430px) {
+    
+    /* 1. MATIKAN OVERLAPPING KHUSUS DI HP */
+    main > section {
+        position: relative !important; 
+        top: auto !important;
+        min-height: auto; /* Membiarkan tinggi menyesuaikan isi konten */
+    }
+
+    /* 2. SECTION 1: KONTAK */
+    .kontak-section {
+        padding: 60px 5% 60px;
+    }
+    .kontak-header {
+        margin-bottom: 40px;
+    }
+    .kontak-title {
+        font-size: 2.8rem; /* Ukuran font disesuaikan untuk layar sempit */
+        margin-bottom: 15px;
+    }
+    .kontak-desc {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .kontak-cards-wrapper {
+        gap: 20px;
+    }
+    .kontak-card {
+        width: 100%; /* Kartu memenuhi lebar layar */
+        padding: 40px 20px 30px;
+    }
+    .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    .icon-wrapper svg {
+        width: 30px;
+        height: 30px;
+    }
+    .kontak-card h3 {
+        font-size: 1.3rem;
+    }
+
+    /* 3. SECTION 2: FORMULIR */
+    .form-section {
+        padding: 60px 5% 80px;
+    }
+    .form-header {
+        margin-bottom: 35px;
+    }
+    .form-title {
+        font-size: 2.5rem;
+    }
+    .form-desc {
+        font-size: 1rem;
+    }
+    .form-card {
+        padding: 30px 20px; /* Padding dikurangi agar form tidak terlalu sempit */
+        border-radius: 20px;
+    }
+    .form-row {
+        grid-template-columns: 1fr; /* Memaksa input menjadi 1 kolom (atas-bawah) */
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px 16px; /* Kolom input sedikit lebih ramping */
+    }
+    
+    /* Tombol Kirim menyesuaikan layar mobile */
+    .btn-kirim {
+        width: 100%; /* Tombol jadi full width agar mudah dipencet */
+        padding: 15px 20px;
+        font-size: 1.05rem;
+        margin-top: 10px;
+    }
+}

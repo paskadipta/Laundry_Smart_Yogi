@@ -16,7 +16,16 @@ body {
 
 main {
     /* Memberikan jarak atas agar konten tidak tertutup oleh navbar yang melayang */
-    padding-top: 120px; 
+    padding-top: 0px; 
+}
+
+/* =========================================
+   OVERLAPPING SECTION (PURE CSS)
+   ========================================= */
+main > section {
+    position: sticky;
+    top: 0; /* Jarak berhenti, disesuaikan dengan tinggi navbar */
+    box-shadow: 0 -10px 30px rgba(254, 254, 254, 0.1); /* Opsional: memberi bayangan agar batas antar section yang menimpa lebih terlihat jelas */
 }
 
 /* =========================================
@@ -28,7 +37,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center; 
-    padding: 40px 5% 80px;
+    padding: 120px 5% 80px;
 }
 
 .keunggulan-header {
@@ -43,29 +52,890 @@ main {
 .keunggulan-title {
     font-size: 4.5rem;
     font-weight: 900;
-    color: #000000; 
+    background: linear-gradient(180deg, #003380 0%, #80bfff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin: 0 0 5px 0;
     letter-spacing: 0.5px;
     line-height: 1.1;
 }
 
-.keunggulan-subtitle-wrapper {
+.keunggulan-subtitle-wrapper { 
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px; 
 }
 
-.keunggulan-line {
-    width: 60px;
-    height: 2px;
-    background-color: #003380; 
-}
-
 .keunggulan-subtitle {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #007bff; 
+    color: #000000; 
     margin: 0;
     letter-spacing: 1.5px;
+}
+
+/* =========================================
+   WRAPPER 2 KOLOM (KIRI & KANAN)
+   ========================================= */
+.keunggulan-wrapper {
+    display: flex;
+    gap: 60px; /* Jarak antara kolom kiri dan kanan */
+    width: 100%;
+    max-width: 1100px; /* Lebar maksimal area konten */
+    margin: 0 auto;
+}
+
+.keunggulan-col {
+    flex: 1; /* Membagi lebar sama rata (50% - 50%) */
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-left {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Jarak antara ikon dan tulisan */
+}
+
+.keunggulan-dropdown:hover .keunggulan-summary {
+    color: #007bff;
+}
+
+.keunggulan-dropdown:hover .summary-left svg {
+    transform: scale(1.1); /* Memberi sedikit efek membesar saat mouse diarahkan */
+}
+
+/* Kondisi saat dropdown sedang TERBUKA */
+.keunggulan-dropdown[open] .keunggulan-summary {
+    color: #007bff;
+}
+
+.keunggulan-num {
+    width: 36px; /* Menggunakan width pasti yang lebih lebar untuk menampung angka belasan */
+    flex-shrink: 0; /* Mencegah kotak angka tertekan atau mengecil */
+    display: inline-block;
+}
+
+/* Transisi warna ikon saat di-hover / dibuka */
+.summary-left svg {
+    flex-shrink: 0; /* Mencegah ikon mengecil */
+    transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+/* =========================================
+   UI DROPDOWN (GARIS BAWAH SAJA)
+   ========================================= */
+.keunggulan-dropdown {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #d1d5db; /* Hanya garis bawah */
+    transition: all 0.3s ease;
+}
+
+/* Opsional: Hilangkan garis di elemen terakhir tiap kolom agar rapi */
+.keunggulan-dropdown:last-child {
+    border-bottom: none; 
+}
+
+/* Efek hover pada teks judul */
+.keunggulan-dropdown:hover .keunggulan-summary {
+    color: #007bff;
+}
+
+.keunggulan-summary {
+    padding: 24px 0; 
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #111111; 
+    cursor: pointer;
+    list-style: none; /* Menghilangkan panah default browser */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+/* Sembunyikan marker bawaan di webkit */
+.keunggulan-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Ikon panah (chevron) buatan sendiri di kanan */
+.keunggulan-summary::after {
+    content: '▼';
+    font-size: 0.85rem;
+    color: #111111;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Saat dropdown TERBUKA */
+.keunggulan-dropdown[open] .keunggulan-summary {
+    color: #007bff;
+}
+
+.keunggulan-dropdown[open] .keunggulan-summary::after {
+    transform: rotate(180deg);
+    color: #007bff;
+}
+
+.keunggulan-content {
+    padding: 0 0 24px 0; 
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.7;
+    overflow: hidden; /* Mencegah teks keluar batas saat animasi */
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+/* =========================================
+   SECTION 2: HARGA PAKET USAHA
+   ========================================= */
+.paket-section {
+    background-color: #007bff; /* Sesuai instruksi background biru */
+    padding: 120px 5% 100px;
+    min-height: 100vh;
+}
+
+.paket-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.paket-subtitle {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.paket-title {
+    color: #ffffff;
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   GRID CARD PAKET (4 Kolom)
+   ========================================= */
+.paket-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Otomatis dibagi 4 kolom di PC */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paket-card {
+    background: rgba(255, 255, 255, 0.15); /* Warna dasar putih transparan */
+    backdrop-filter: blur(12px); /* Efek blur/kaca */
+    -webkit-backdrop-filter: blur(12px); /* Dukungan browser Safari */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Garis tepi kaca agar lebih tegas */
+    border-radius: 16px;
+    padding: 60px 25px 30px;
+    position: relative;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15); /* Bayangan lembut */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paket-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.25); /* Kaca menjadi sedikit lebih terang saat di-hover */
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   RIBBON / LABEL POJOK KIRI ATAS
+   ========================================= */
+.paket-ribbon {
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    padding: 10px 24px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek lipatan 3D pita */
+.paket-ribbon::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    border-top: 12px solid; 
+    border-left: 12px solid transparent;
+}
+
+/* Warna Masing-Masing Paket (Ribbon + Tombol) */
+.ribbon-bronze { background-color: #d97736; }
+.ribbon-bronze::before { border-top-color: #9c5221; }
+.btn-bronze { background-color: #d97736; }
+.btn-bronze:hover { background-color: #bf662d; }
+.paket-card:hover .price-main { color: #d97736; } /* Teks harga ikut berwarna saat dihover */
+
+.ribbon-silver { background-color: #94a3b8; }
+.ribbon-silver::before { border-top-color: #475569; }
+.btn-silver { background-color: #94a3b8; }
+.btn-silver:hover { background-color: #64748b; }
+.paket-card:hover .price-main { color: #64748b; }
+
+.ribbon-gold { background-color: #eab308; }
+.ribbon-gold::before { border-top-color: #854d0e; }
+.btn-gold { background-color: #eab308; }
+.btn-gold:hover { background-color: #ca8a04; }
+.paket-card:hover .price-main { color: #ca8a04; }
+
+.ribbon-platinum { background-color: #334155; }
+.ribbon-platinum::before { border-top-color: #0f172a; }
+.btn-platinum { background-color: #334155; }
+.btn-platinum:hover { background-color: #1e293b; }
+.paket-card:hover .price-main { color: #334155; }
+
+/* =========================================
+   AREA HARGA (CORET & UTAMA)
+   ========================================= */
+.paket-price-area {
+    text-align: center;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.4); /* Ubah garis putus-putus jadi putih transparan */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.price-strikethrough {
+    display: block;
+    color: rgba(255, 255, 255, 0.75); /* Ubah teks coret jadi putih transparan */
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+
+.price-main {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff; /* Ubah teks utama jadi putih agar kontras */
+    margin: 0;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.price-main span {
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   LIST FITUR / KEUNTUNGAN
+   ========================================= */
+.paket-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.paket-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    color: #ffffff; /* Ubah warna teks fitur jadi putih */
+    line-height: 1.5;
+}
+
+/* Mengatur ukuran dan warna icon ceklis */
+.paket-features li svg {
+    width: 20px;
+    height: 20px;
+    fill: #22c55e; /* Hijau modern */
+    flex-shrink: 0; /* Mencegah ikon menyusut jika teks panjang */
+    margin-top: 2px;
+}
+
+/* =========================================
+   TOMBOL BELI DI BAWAH CARD
+   ========================================= */
+.paket-btn {
+    display: block;
+    margin-top: auto; /* Otomatis mendorong tombol ke bawah agar semua sejajar */
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.paket-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px;
+    pointer-events: none; 
+    z-index: 10; 
+    
+    /* Gradasi kilatan silver/putih terang */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 30%,
+        rgba(255, 255, 255, 0.2) 42%,
+        rgba(255, 255, 255, 0.9) 50%, /* Inti kilatan */
+        rgba(255, 255, 255, 0.2) 58%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    
+    background-size: 300% 300%; 
+    
+    /* Posisi diam (kursor di luar): Kilatan sembunyi di luar POJOK KIRI ATAS */
+    background-position: 100% 100%; 
+    
+    /* Animasi saat kursor PERGI (kembali ke kiri atas) */
+    transition: background-position 0.5s ease-in-out;
+}
+
+/* Menjalankan kilatan HANYA saat card disentuh (di-hover) kursor */
+.paket-card:hover::after {
+    opacity: 1;
+    /* Menyapu kilatan tembus ke pojok kanan bawah */
+    background-position: 0% 0%; 
+}
+
+/* =========================================
+   SECTION 3: FASILITAS
+   ========================================= */
+.fasilitas-section {
+    background-color: #ffffff; 
+    padding: 120px 5% 120px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.fasilitas-title {
+    color: #007bff; 
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Container Pembagi 2 Kolom Kiri Kanan */
+.fasilitas-container {
+    display: flex;
+    flex-direction: row; /* Memaksa elemen bersebelahan kiri & kanan */
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: stretch; 
+}
+
+/* Kolom Kiri: 7 Card */
+.fasilitas-wrapper {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+}
+
+.fasilitas-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    border: 1px solid #f0f0f0; 
+    transition: transform 0.3s ease;
+}
+
+.fasilitas-card:hover {
+    transform: translateY(-3px); 
+}
+
+.fasilitas-icon {
+    background-color: #1a4d9e; 
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fasilitas-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff; 
+}
+
+.fasilitas-text {
+    flex: 1; 
+    padding: 16px 24px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a4d9e; 
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.fasilitas-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    width: 2px;
+    background-color: #c0d0f0; 
+}
+
+/* Kolom Kanan: Frame Foto Preview */
+.fasilitas-preview-wrapper {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 550px; 
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #f0f0f0;
+}
+
+.preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Tombol Toggle Slider */
+.toggle-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 5;
+}
+
+.toggle-btn:hover {
+    background: rgba(0, 123, 255, 0.8);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-prev { left: 15px; }
+.btn-next { right: 15px; }
+
+/* =========================================
+   SECTION 4: TAHAPAN MENJADI MITRA
+   ========================================= */
+.tahapan-section {
+    padding: 120px 5% 120px;
+    background-color: #007bff; /* Biru sangat pucat/putih kebiruan agar kontras dengan section sebelumnya */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Judul dengan Gradasi Biru ke Putih (Biru Terang) */
+.tahapan-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 280px; /* Jarak yang cukup besar untuk card bagian atas (top) */
+    color: #ffffff;
+    background: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: initial;
+}
+
+/* Container utama Timeline Horizontal */
+.timeline-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Lebar area timeline */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    margin-bottom: 100px;
+}
+
+/* Garis panjang di tengah */
+.timeline-center-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* right: 0; --- HAPUS INI --- */
+    width: 0%; /* --- TAMBAHKAN INI (Biar mulai dari 0) --- */
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Setiap blok tahap (berisi bulatan angka + kartu) */
+.timeline-item {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 16%; /* Membagi 6 bagian merata */
+}
+
+/* Titik lingkaran di tengah (Angka) */
+.timeline-dot {
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff; 
+    color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border: none; /* Garis tepi putih */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Efek cincin luar */
+}
+
+/* Kartu berisi informasi tahap */
+.timeline-content {
+    position: absolute;
+    width: 220px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #444444;
+}
+
+/* Ikon di dalam kartu */
+.timeline-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content strong {
+    color: #007bff; /* Menghighlight teks penting agar mudah dipindai mata */
+}
+
+/* Tiang vertikal penyambung antara titik tengah dan kartu */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    /* height: 60px; --- UBAH BAGIAN INI JADI VARIABEL --- */
+    height: var(--line-height, 0px); 
+    background-color: rgba(255, 255, 255, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* ===== PENGATURAN KARTU BAGIAN ATAS (TOP) ===== */
+.timeline-item.top .timeline-content {
+    bottom: 85px;
+    border-bottom: none; /* Aksen biru di bawah kartu */
+}
+.timeline-item.top::before {
+    bottom: 22px; /* Tiang ke atas */
+}
+
+/* ===== PENGATURAN KARTU BAGIAN BAWAH (BOTTOM) ===== */
+.timeline-item.bottom .timeline-content {
+    top: 85px;
+    border-top: none; /* Aksen biru di atas kartu */
+}
+.timeline-item.bottom::before {
+    top: 22px; /* Tiang ke bawah */
+}
+
+/* =========================================
+   SECTION 5: CALL TO ACTION (CTA)
+   ========================================= */
+.cta-section {
+    background-color: #ffffff; /* Tetap putih polos seperti permintaan */
+    min-height: 100vh;
+    display: flex;             
+    align-items: center;       
+    justify-content: center;   
+    padding: 20px 5%;
+    position: relative;        /* Tambahan: agar efek pendaran (glow) tidak lari ke luar section */
+    z-index: 1;
+}
+
+.cta-glass-card {
+    /* Ini baru bening! Transparan putih dengan efek blur */
+    background: rgba(255, 255, 255, 0.15); /* Warna dasar putih transparan */
+    backdrop-filter: blur(12px); /* Efek blur/kaca */
+    -webkit-backdrop-filter: blur(12px); /* Dukungan browser Safari */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Garis tepi kaca agar lebih tegas */
+    border-radius: 24px;
+    padding: 80px 40px;
+    text-align: center;
+    max-width: 850px;
+    width: 100%;
+    
+    /* Shadow ini penting banget biar si kaca bening misah (nggak nyatu) sama background putih di belakangnya */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+}
+
+.cta-title {
+    color: #111111; /* Wajib diubah jadi gelap/hitam biar kebaca di kaca bening */
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.cta-highlight {
+    color: #007bff; /* Teks diubah menjadi warna biru */
+    font-size: 5.5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    /* Efek glow (neon) tipis agar terlihat menyala seperti referensi gambar */
+    text-shadow: 0 0 25px rgba(0, 123, 255, 0.5); 
+}
+
+.cta-desc {
+    color: #555555; /* Wajib diubah jadi abu-abu gelap */
+    font-size: 1.25rem;
+    margin-bottom: 45px;
+    font-weight: 500;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 16px 45px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Mengubah tema tombol referensi menjadi biru agar senada dengan teks Highlight */
+.btn-solid {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 2px solid #007bff;
+}
+
+.btn-solid:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.btn-outline:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+}
+
+/* =========================================
+   MOBILE LAYOUT (MAX-WIDTH: 430px)
+   ========================================= */
+@media screen and (max-width: 430px) {
+    /* 1. NONAKTIFKAN OVERLAPPING SECTION DI MOBILE */
+    main > section {
+        position: relative !important; /* Membatalkan efek sticky */
+        top: auto !important;
+        box-shadow: none !important;
+        min-height: auto; /* Membiarkan tinggi menyesuaikan isi konten (tidak dipaksa 1 layar penuh) */
+    }
+
+    /* 2. SECTION 1: 12 KEUNGGULAN */
+    .keunggulan-section {
+        /* Ubah nilai 80px menjadi 130px (atau 140px jika masih kurang turun) */
+        padding: 130px 5% 40px; 
+    }
+    .keunggulan-title {
+        font-size: 2.8rem;
+    }
+    .keunggulan-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .keunggulan-wrapper {
+        flex-direction: column; /* Mengubah 2 kolom menjadi atas-bawah */
+        gap: 0;
+    }
+    .keunggulan-summary {
+        font-size: 1rem;
+        padding: 16px 0;
+    }
+
+    /* 3. SECTION 2: HARGA PAKET USAHA */
+    .paket-section {
+        padding: 80px 5% 60px;
+    }
+    .paket-title {
+        font-size: 2.8rem;
+    }
+    .paket-subtitle {
+        font-size: 1.2rem;
+    }
+    .paket-cards-wrapper {
+        grid-template-columns: 1fr; /* Memaksa grid menjadi 1 kolom penuh */
+        gap: 25px;
+    }
+    .paket-card {
+        padding: 50px 20px 25px;
+    }
+    .price-main {
+        font-size: 3rem;
+    }
+
+    /* 4. SECTION 3: FASILITAS */
+    .fasilitas-section {
+        padding: 80px 5% 60px;
+    }
+    .fasilitas-title {
+        font-size: 2.8rem;
+        margin-bottom: 30px;
+    }
+    .fasilitas-container {
+        flex-direction: column; /* Kartu di atas, foto di bawah */
+        gap: 25px;
+    }
+    .fasilitas-text {
+        font-size: 1.1rem;
+        padding: 12px 16px;
+    }
+    
+    /* === PERBAIKAN DI SINI === */
+    .preview-card {
+        width: 100%;
+        height: 280px;      /* Berikan tinggi pasti agar foto tampil proporsional */
+        max-height: none;   /* Hapus batasan max-height sebelumnya */
+    }
+
+    /* 5. SECTION 4: TAHAPAN MENJADI MITRA (UBAH JADI VERTIKAL) */
+    .tahapan-section {
+        padding: 80px 5% 60px;
+    }
+    .tahapan-title {
+        font-size: 2.8rem;
+        margin-bottom: 50px; /* Menghilangkan jarak ratusan pixel yang ada di versi PC */
+    }
+    .timeline-wrapper {
+        flex-direction: column; /* Menyusun tahapan dari atas ke bawah */
+        align-items: flex-start;
+        gap: 30px;
+        padding-left: 10px;
+        margin-bottom: 50px;
+    }
+    /* Memutar garis horizontal menjadi vertikal murni dengan !important untuk mengalahkan style GSAP inline */
+    .timeline-center-line {
+        width: 3px !important; 
+        height: 100% !important; 
+        left: 31px; /* Posisi di tengah-tengah lingkaran angka */
+        top: 0;
+        transform: none;
+    }
+    .timeline-item {
+        width: 100%;
+        justify-content: flex-start; /* Meratakan ke kiri */
+    }
+    /* Menghilangkan tiang-tiang kecil karena sudah tidak dibutuhkan di mode vertikal */
+    .timeline-item::before {
+        display: none !important;
+    }
+    .timeline-dot {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+        flex-shrink: 0;
+        z-index: 2;
+    }
+    /* Mematikan efek zigzag (atas-bawah) pada kotak teks */
+    .timeline-content {
+        position: relative;
+        width: calc(100% - 60px); /* Menyesuaikan sisa lebar layar */
+        margin-left: 20px;
+        top: auto !important; 
+        bottom: auto !important;
+        text-align: left;
+        padding: 15px;
+    }
+    .timeline-content strong {
+        display: block; /* Membuat teks tebal berdiri di baris sendiri (seperti sub-judul) */
+        margin-bottom: 5px;
+    }
+
+    /* 6. SECTION 5: CALL TO ACTION (CTA) */
+    .cta-section {
+        padding: 60px 5%;
+    }
+    .cta-glass-card {
+        padding: 40px 20px; /* Mengurangi tebal padding kaca */
+        border-radius: 16px;
+    }
+    .cta-title {
+        font-size: 2rem;
+    }
+    .cta-highlight {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+    .cta-desc {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    .cta-buttons {
+        flex-direction: column; /* Tombol jadi atas-bawah memanjang */
+        gap: 15px;
+    }
+    .cta-buttons a {
+        width: 100%; /* Memaksa lebar tombol penuh */
+    }
 }

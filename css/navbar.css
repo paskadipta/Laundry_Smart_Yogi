@@ -104,7 +104,7 @@
 /* --- Layout Grid 4 Kolom --- */
 .footer-top {
     display: grid;
-    grid-template-columns: 3.5fr 2fr 1fr 1.2fr; /* Kolom pertama lebih lebar untuk deskripsi */
+    grid-template-columns: 3.5fr 1fr 1fr 1.2fr; /* Kolom pertama lebih lebar untuk deskripsi */
     gap: 3rem;
     margin-bottom: 60px;
     max-width: 1250px;

@@ -15,7 +15,7 @@ function renderNavbar() {
                     <li><a href="../html/home.html">Home</a></li>
                     <li><a href="../html/laundry.html">Laundry Smart</a></li>
                     <li><a href="../html/mitra.html">Paket Mitra</a></li>
-                    <li><a href="">Kontak</a></li>
+                    <li><a href="../html/contact.html">Kontak</a></li>
                 </ul>
 
                 <!-- Sisi Kanan: Spacer untuk Desktop ATAU Hamburger untuk Mobile -->
@@ -42,7 +42,6 @@ function renderNavbar() {
 }
 
 // Fungsi untuk merender Footer
-// Fungsi untuk merender Footer
 function renderFooter() {
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
@@ -63,10 +62,10 @@ function renderFooter() {
                 <div class="footer-col">
                     <h4>MENU</h4>
                     <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#paket">Paket Kemitraan</a></li>
-                        <li><a href="#mengapa">Lihat Peluang Mengapa Laundry Smart</a></li>
-                        <li><a href="#kontak">Hubungi Kami</a></li>
+                        <li><a href="../html/home.html">Beranda</a></li>
+                        <li><a href="../html/laundry.html">Laundry Smart</a></li>
+                        <li><a href="../html/mitra.html">Paket Mitra</a></li>
+                        <li><a href="../html/contact.html">Hubungi Kami</a></li>
                     </ul>
                 </div>
 
@@ -75,11 +74,11 @@ function renderFooter() {
                     <h4>KONTAK</h4>
                     <div class="contact-item">
                         <span class="contact-label">WA/CALL</span>
-                        <span class="contact-value">0857 7240 9608</span>
+                        <span class="contact-value">0858-8828-8272</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">INSTAGRAM</span>
-                        <span class="contact-value">@laundrysmart_id</span>
+                        <span class="contact-value">@laundrysmart.id</span>
                     </div>
                     <div class="contact-item">
                         <span class="contact-label">WEB</span>

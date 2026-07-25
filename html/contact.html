@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Smart - Kontak</title>
+    <!-- Pastikan path CSS navbar kamu benar -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <!-- Kontainer Navbar Otomatis -->
+    <header id="navbar-container"></header>
+
+    <main>
+        <section class="kontak-section">
+            
+            <!-- AREA HEADER (Tengah) -->
+            <div class="kontak-header">
+                <h1 class="kontak-title"><span class="highlight-blue">Hubungi</span> Kami</h1>
+                <p class="kontak-desc">Punya pertanyaan atau siap bergabung? Tim LaundrySmart siap membantu kamu memulai perjalanan bisnis.</p>
+            </div>
+
+            <!-- AREA KARTU (3 Kolom) -->
+            <div class="kontak-cards-wrapper">
+                
+                <!-- CARD 1: WhatsApp -->
+                <div class="kontak-card">
+                    <div class="icon-wrapper icon-wa">
+                        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>0857 7240 9608</p>
+                    <a href="#" class="card-link">Chat Sekarang &rarr;</a>
+                </div>
+
+                <!-- CARD 2: Instagram -->
+                <div class="kontak-card">
+                    <div class="icon-wrapper icon-ig">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>@laundrysmart_id</p>
+                    <a href="#" class="card-link">Follow Kami &rarr;</a>
+                </div>
+
+                <!-- CARD 3: Website -->
+                <div class="kontak-card">
+                    <div class="icon-wrapper icon-web">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Website</h3>
+                    <p>laundrysmart.id</p>
+                    <a href="#" class="card-link">Kunjungi &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: FORMULIR KONTAK -->
+        <section class="form-section">
+            
+            <!-- Header Form (Di Luar Card, Posisi Tengah, Teks Putih) -->
+            <div class="form-header">
+                <h2 class="form-title">Kirim Pesan</h2>
+                <p class="form-desc">Isi formulir di bawah ini dan tim kami akan segera menghubungi Anda</p>
+            </div>
+
+            <!-- Card Formulir -->
+            <div class="form-card">
+                <form action="#" method="POST">
+                    
+                    <!-- Baris 1: Nama & WhatsApp (Kiri - Kanan) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap <span>*</span></label>
+                            <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">No. WhatsApp <span>*</span></label>
+                            <input type="tel" id="whatsapp" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                    </div>
+
+                    <!-- Baris 2: Email & Paket (Kiri - Kanan) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="email@contoh.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="paket">Paket yang Diminati</label>
+                            <select id="paket">
+                                <option value="" disabled selected>— Pilih Paket —</option>
+                                <option value="bronze">Paket Bronze</option>
+                                <option value="silver">Paket Silver</option>
+                                <option value="gold">Paket Gold</option>
+                                <option value="platinum">Paket Platinum</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Baris 3: Pesan (Penuh) -->
+                    <div class="form-row full-width">
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" placeholder="Tulis pesan atau pertanyaan kamu di sini..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Kirim -->
+                    <button type="submit" class="btn-kirim">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        Kirim Pesan via WhatsApp
+                    </button>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- Kontainer Footer -->
+    <footer id="footer-container"></footer>
+
+    <!-- Script Navbar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>
