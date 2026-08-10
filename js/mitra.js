@@ -247,7 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
         "../asset/1.jpg",
         "../asset/2.jpg", // <--- Masukkan nama file foto ke-2
         "../asset/3.jpg", // <--- Masukkan nama file foto ke-3
-        "../asset/4.jpg"  // <--- Masukkan nama file foto ke-4
+        "../asset/4.jpg",  // <--- Masukkan nama file foto ke-4
+        "../asset/5.jpeg",
+        "../asset/6.jpeg"
     ];
 
     let currentIndex = 0;
