@@ -116,3 +116,21 @@ tlForm.from(".form-title", {
             }
         });
     });
+
+// =========================================
+// FUNGSI KIRIM PESAN KE WHATSAPP (BARU)
+// =========================================
+function kirimKeWhatsApp(event) {
+    event.preventDefault(); 
+
+    let nama = document.getElementById('nama').value;
+    let email = document.getElementById('email').value || '-'; 
+    let paket = document.getElementById('paket').value;
+    let pesan = document.getElementById('pesan').value || '-';
+
+    let teksPesan = `${nama}\n${email}\n${paket}\n${pesan}`;
+    let pesanEncoded = encodeURIComponent(teksPesan);
+    let nomorWA = "6285888288272";
+
+    window.open(`https://wa.me/${nomorWA}?text=${pesanEncoded}`, '_blank');
+}
