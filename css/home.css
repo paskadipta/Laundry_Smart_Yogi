@@ -10,41 +10,46 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Tambahan bonus agar scroll manual lebih mulus */
+    scroll-behavior: smooth;
+    /* Tambahan bonus agar scroll manual lebih mulus */
 }
 
 body {
     background-color: #ffffff;
     color: #333;
     /* KUNCI SOLUSINYA: Gunakan 'clip' alih-alih 'hidden' */
-    overflow-x: clip; 
+    overflow-x: clip;
 }
 
 /* --- SETUP MAIN CONTENT --- */
 main {
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
 /* --- SETUP HERO SECTION --- */
 .hero {
-    position: sticky; /* UBAH: dari relative menjadi sticky agar tertahan saat scroll */
-    top: 80px;        /* TAMBAH: jarak penahan tepat di bawah navbar */
-    z-index: 0;       /* UBAH: pastikan nilainya 0 agar bisa ditimpa oleh container ke-2 */
-    
+    position: sticky;
+    /* UBAH: dari relative menjadi sticky agar tertahan saat scroll */
+    top: 80px;
+    /* TAMBAH: jarak penahan tepat di bawah navbar */
+    z-index: 0;
+    /* UBAH: pastikan nilainya 0 agar bisa ditimpa oleh container ke-2 */
+
     height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    overflow: hidden; 
+    overflow: hidden;
     text-align: center;
 }
 
 /* Mengatur tumpukan konten agar berada di atas air */
 .hero-content {
     position: relative;
-    z-index: 99 !important; /* UBAH: Pindahkan z-index 99 ke sini agar teks dan logo aman dari air */
+    z-index: 99 !important;
+    /* UBAH: Pindahkan z-index 99 ke sini agar teks dan logo aman dari air */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +57,7 @@ main {
 }
 
 .hero-logo {
-    max-height: 170px; 
+    max-height: 170px;
     width: auto;
     margin-bottom: 20px;
     object-fit: contain;
@@ -68,7 +73,7 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* Sedikit shadow agar tetap terlihat jika background benar-benar putih */
-    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .desc-primary {
@@ -98,8 +103,9 @@ main {
     left: 0;
     width: 100%;
     height: 400px;
-    z-index: 1; /* Pastikan selalu berada di belakang teks */
-    pointer-events: none; 
+    z-index: 1;
+    /* Pastikan selalu berada di belakang teks */
+    pointer-events: none;
     filter: url('#gooey');
 }
 
@@ -110,23 +116,26 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Mengunci ombak agar tidak tumpah keluar container */
+    overflow: hidden;
+    /* Mengunci ombak agar tidak tumpah keluar container */
 }
 
 /* Mengganti ombak geser dengan elemen raksasa memutar untuk ilusi ombak mulus */
 .water-base {
     position: absolute;
-    top: 320px; /* Posisi batas ombak */
+    top: 320px;
+    /* Posisi batas ombak */
     left: 50%;
     width: 200vw;
     height: 200vw;
-    margin-left: -100vw; 
+    margin-left: -100vw;
     background: #007bff;
 }
 
 /* Gelombang Depan */
 .layer-1 {
-    border-radius: 43%; /* Bentuk asimetris pembentuk ombak */
+    border-radius: 43%;
+    /* Bentuk asimetris pembentuk ombak */
     animation: wave-spin 12s linear infinite;
 }
 
@@ -137,37 +146,102 @@ main {
 }
 
 @keyframes wave-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes wave-spin-reverse {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
 
 /* --- 2. BUBBLE / LIDAH AIR (HUKUM FISIKA SQUISH & STRETCH) --- */
 .water-flame {
     position: absolute;
-    bottom: 30px; 
-    background: #007bff; 
-    border-radius: 50%; 
+    bottom: 30px;
+    background: #007bff;
+    border-radius: 50%;
     z-index: 2;
     animation-name: blaze-up;
     animation-iteration-count: infinite;
     /* Bezier custom: lepas cepat dari tarikan air, lalu melambat di atas melawan gravitasi */
-    animation-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1); 
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 /* Posisi & Variasi Ukuran */
-.wf-1 { left: 10%; width: 50px; height: 50px; animation-duration: 2.8s; animation-delay: 0s; }
-.wf-2 { left: 22%; width: 80px; height: 80px; animation-duration: 3.5s; animation-delay: 0.6s; }
-.wf-3 { left: 35%; width: 60px; height: 60px; animation-duration: 3.1s; animation-delay: 0.2s; }
-.wf-4 { left: 48%; width: 90px; height: 90px; animation-duration: 3.8s; animation-delay: 0.9s; }
-.wf-5 { left: 60%; width: 55px; height: 55px; animation-duration: 2.7s; animation-delay: 0.4s; }
-.wf-6 { left: 75%; width: 85px; height: 85px; animation-duration: 3.4s; animation-delay: 0.7s; }
-.wf-7 { left: 88%; width: 45px; height: 45px; animation-duration: 2.6s; animation-delay: 0.3s; }
-.wf-8 { left: 95%; width: 70px; height: 70px; animation-duration: 3.2s; animation-delay: 0.8s; }
+.wf-1 {
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    animation-duration: 2.8s;
+    animation-delay: 0s;
+}
+
+.wf-2 {
+    left: 22%;
+    width: 80px;
+    height: 80px;
+    animation-duration: 3.5s;
+    animation-delay: 0.6s;
+}
+
+.wf-3 {
+    left: 35%;
+    width: 60px;
+    height: 60px;
+    animation-duration: 3.1s;
+    animation-delay: 0.2s;
+}
+
+.wf-4 {
+    left: 48%;
+    width: 90px;
+    height: 90px;
+    animation-duration: 3.8s;
+    animation-delay: 0.9s;
+}
+
+.wf-5 {
+    left: 60%;
+    width: 55px;
+    height: 55px;
+    animation-duration: 2.7s;
+    animation-delay: 0.4s;
+}
+
+.wf-6 {
+    left: 75%;
+    width: 85px;
+    height: 85px;
+    animation-duration: 3.4s;
+    animation-delay: 0.7s;
+}
+
+.wf-7 {
+    left: 88%;
+    width: 45px;
+    height: 45px;
+    animation-duration: 2.6s;
+    animation-delay: 0.3s;
+}
+
+.wf-8 {
+    left: 95%;
+    width: 70px;
+    height: 70px;
+    animation-duration: 3.2s;
+    animation-delay: 0.8s;
+}
 
 /* Animasi Perubahan Bentuk Secara Real-Time */
 @keyframes blaze-up {
@@ -175,14 +249,17 @@ main {
         /* Sedang menempel: Tubuh gepeng dan lebar menahan tarikan */
         transform: translate(0, 0) scale(1.5, 0.4);
     }
+
     20% {
         /* Saat melesat lepas: Bentuk ditarik memanjang (stretch) seperti tetesan air natural */
         transform: translate(15px, -80px) scale(0.6, 1.5);
     }
+
     60% {
         /* Mengambang di udara: Kecepatan melambat, bentuk mulai kembali normal dan bergoyang tipis */
         transform: translate(-10px, -220px) scale(0.9, 1.1);
     }
+
     100% {
         /* Puncak jangkauan: Tetesan menyusut dan lenyap */
         transform: translate(5px, -380px) scale(0, 0);
@@ -193,19 +270,21 @@ main {
    CONTAINER 2 (OVERLAPPING / AREA KEDALAMAN AIR)
    ========================================= */
 .dummy-section {
-    position: sticky; 
-    top: 0;           /* UBAH KUNCI: Jadikan 0 agar container meluncur mentok sampai ujung atas layar */
-    z-index: 10; 
-    
-    min-height: 100vh; /* UBAH KUNCI: Kembalikan jadi 100vh agar tingginya full satu layar penuh */
-    
+    position: sticky;
+    top: 0;
+    /* UBAH KUNCI: Jadikan 0 agar container meluncur mentok sampai ujung atas layar */
+    z-index: 10;
+
+    min-height: 100vh;
+    /* UBAH KUNCI: Kembalikan jadi 100vh agar tingginya full satu layar penuh */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #007bff; 
-    color: #ffffff; 
-    margin-top: 0; 
+    background-color: #007bff;
+    color: #ffffff;
+    margin-top: 0;
 }
 
 /* --- STYLING CONTAINER 2 (TENTANG KAMI) --- */
@@ -225,8 +304,8 @@ main {
 .label-tentang {
     font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: 3px; 
-    color: rgba(255, 255, 255, 0.8); 
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 10px;
 }
 
@@ -240,28 +319,35 @@ main {
 /* --- LAYOUT 2 KOLOM (KIRI TEKS, KANAN GAMBAR) --- */
 .about-grid {
     display: flex;
-    align-items: center; /* Memastikan teks dan gambar sejajar secara vertikal */
+    align-items: center;
+    /* Memastikan teks dan gambar sejajar secara vertikal */
     justify-content: center;
-    gap: 60px; /* Jarak antara kolom teks dan kolom gambar */
+    gap: 60px;
+    /* Jarak antara kolom teks dan kolom gambar */
     width: 100%;
-    max-width: 1100px; /* Lebar maksimal area konten agar tidak terlalu melebar */
+    max-width: 1100px;
+    /* Lebar maksimal area konten agar tidak terlalu melebar */
 }
 
 /* Kolom Kiri */
 .about-text {
-    flex: 1; /* Mengambil proporsi ruang yang sama dengan kolom gambar */
+    flex: 1;
+    /* Mengambil proporsi ruang yang sama dengan kolom gambar */
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Jarak antar paragraf */
+    gap: 25px;
+    /* Jarak antar paragraf */
 }
 
 .deskripsi-tentang {
     font-size: 1.2rem;
     line-height: 1.8;
     color: #ffffff;
-    text-align: justify; /* Instruksi: teks rata tengah */
+    text-align: justify;
+    /* Instruksi: teks rata tengah */
     font-weight: 400;
-    margin: 0; /* Menghapus margin lama karena sudah diatur oleh gap .about-text */
+    margin: 0;
+    /* Menghapus margin lama karena sudah diatur oleh gap .about-text */
 }
 
 .deskripsi-tentang strong {
@@ -270,16 +356,21 @@ main {
 
 /* Kolom Kanan */
 .about-image {
-    flex: 1; /* Mengambil proporsi ruang yang sama dengan kolom teks */
+    flex: 1;
+    /* Mengambil proporsi ruang yang sama dengan kolom teks */
     display: flex;
-    justify-content: flex-end; /* Mengatur gambar agar menempel ke kanan */
+    justify-content: flex-end;
+    /* Mengatur gambar agar menempel ke kanan */
 }
 
 .about-image img {
     width: 100%;
-    max-width: 450px; /* Mencegah gambar menjadi terlalu raksasa */
-    border-radius: 20px; /* Sudut melengkung yang rapi */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Sedikit bayangan agar gambar terlihat mengambang elegan */
+    max-width: 450px;
+    /* Mencegah gambar menjadi terlalu raksasa */
+    border-radius: 20px;
+    /* Sudut melengkung yang rapi */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    /* Sedikit bayangan agar gambar terlihat mengambang elegan */
     object-fit: cover;
 }
 
@@ -287,13 +378,15 @@ main {
    SECTION 3 (FITUR & KEUNGGULAN - OVERLAPPING)
    ========================================= */
 .features-section {
-    position: sticky; 
-    top: 0;           /* UBAH KUNCI: Jadikan 0 agar ikut mentok ke ujung atas saat menimpa container 2 */
-    z-index: 20;      
-    
-    background-color: #ffffff; 
-    min-height: 100vh; /* UBAH KUNCI: Kembalikan jadi 100vh agar full satu layar penuh */
-    
+    position: sticky;
+    top: 0;
+    /* UBAH KUNCI: Jadikan 0 agar ikut mentok ke ujung atas saat menimpa container 2 */
+    z-index: 20;
+
+    background-color: #ffffff;
+    min-height: 100vh;
+    /* UBAH KUNCI: Kembalikan jadi 100vh agar full satu layar penuh */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -306,8 +399,10 @@ main {
     text-align: center;
     font-size: 3.2rem;
     font-weight: 800;
-    font-style: normal; /* Menghilangkan efek miring */
-    color: #333;        /* Mengikuti warna teks standar container 1 */
+    font-style: normal;
+    /* Menghilangkan efek miring */
+    color: #333;
+    /* Mengikuti warna teks standar container 1 */
     margin-bottom: 40px;
     line-height: 1.2;
 }
@@ -321,39 +416,42 @@ main {
 /* --- GRID LAYOUT (3 KOLOM, 2 BARIS) --- */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     width: 100%;
-    max-width: 1250px; 
+    max-width: 1250px;
 }
 
 /* --- STYLING ISI CARD --- */
 .feature-card {
-    position: relative; /* TAMBAH KUNCI: Agar bisa digeser secara mulus menggunakan 'top' */
+    position: relative;
+    /* TAMBAH KUNCI: Agar bisa digeser secara mulus menggunakan 'top' */
     top: 0;
-    
+
     display: flex;
-    align-items: center; 
+    align-items: center;
     background-color: #ffffff;
     border: 1.5px solid #e9ecef;
     border-radius: 20px;
     padding: 20px 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    
+
     /* UBAH KUNCI: Ganti 'transform' dengan 'top' agar GSAP bebas bergerak tanpa ditahan CSS */
-    transition: top 0.3s ease, box-shadow 0.3s ease; 
+    transition: top 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-    top: -5px; /* UBAH KUNCI: Menggantikan transform: translateY(-5px) */
-    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15); 
+    top: -5px;
+    /* UBAH KUNCI: Menggantikan transform: translateY(-5px) */
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
 }
 
 /* Angka Bulat */
 .card-number {
     font-size: 2rem;
     font-weight: 800;
-    color: #333; /* Disamakan dengan warna teks standar */
+    color: #333;
+    /* Disamakan dengan warna teks standar */
     margin-right: 15px;
 }
 
@@ -367,49 +465,56 @@ main {
     justify-content: center;
     align-items: center;
     margin-right: 15px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .card-icon svg {
     width: 28px;
     height: 28px;
     fill: none;
-    stroke: #ffffff; /* Warna garis ikon */
-    stroke-width: 2; /* Ketebalan garis ikon */
+    stroke: #ffffff;
+    /* Warna garis ikon */
+    stroke-width: 2;
+    /* Ketebalan garis ikon */
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
 /* Teks Deskripsi (Font style disamakan dengan paragraf container 1) */
 .card-text {
     font-size: 1rem;
-    color: #555; /* Warna teks sekunder standar container 1 */
+    color: #555;
+    /* Warna teks sekunder standar container 1 */
     line-height: 1.4;
-    text-align: left; 
+    text-align: left;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card-text strong {
-    color: #007bff; /* Warna biru aksen */
+    color: #007bff;
+    /* Warna biru aksen */
     font-weight: 700;
-    display: block; 
+    display: block;
 }
 
 /* =========================================
    SECTION 4 (STRATEGI PEMASARAN - OVERLAPPING)
    ========================================= */
 .strategy-section {
-    position: sticky; 
-    top: 0;           
-    z-index: 30;      
-    background-color: #007bff; /* Biru sangat muda (Ice Blue) */
-    min-height: 100vh; 
-    
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background-color: #007bff;
+    /* Biru sangat muda (Ice Blue) */
+    min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Ubah ke flex-start agar konten bisa discroll jika lebih panjang dari layar */
-    padding: 100px 5% 80px;      /* Padding atas ditambahkan agar tidak tertutup navbar */
+    /* KUNCI PERBAIKAN: Ubah flex-start jadi center dan kurangi padding atas/bawah */
+    justify-content: center;
+    padding: 40px 5%;
 }
 
 /* Pembungkus agar posisi mutlak rata tengah */
@@ -422,66 +527,76 @@ main {
 
 /* --- Teks Atas (STRATEGI) --- */
 .teks-strategi {
-    font-size: 3.8rem;
+    font-size: 2.8rem;
+    /* Sedikit diperkecil agar lebih proporsional di layar laptop */
     font-weight: 900;
-    color: #ffffff; 
+    color: #ffffff;
     margin: 0;
-    margin-bottom: 10px; 
+    margin-bottom: 5px;
+    /* Jarak dipersempit */
     letter-spacing: 3px;
 }
 
 /* --- Teks Bawah di Dalam Card (PEMASARAN) --- */
 .card-pemasaran {
-    background-color: #ffffff; 
-    padding: 10px 50px;
-    border-radius: 25px; 
-    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15); 
+    background-color: #ffffff;
+    padding: 5px 40px;
+    /* Padding vertikal ditipiskan */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15);
     display: inline-block;
 }
 
 .teks-pemasaran {
-    font-size: 4rem;
+    font-size: 2.8rem;
+    /* Sedikit diperkecil */
     font-weight: 900;
     margin: 0;
     letter-spacing: 4px;
     background: linear-gradient(180deg, #003380 0%, #80bdff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.08));
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.08));
 }
 
 /* --- GRID 4 CARD PEMASARAN --- */
 .strategy-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Otomatis membagi menjadi 2 kolom rapi */
-    gap: 70px 40px; /* Jarak vertikal diperbesar untuk ruang ikon melayang */
+    grid-template-columns: repeat(2, 1fr);
+    /* KUNCI PERBAIKAN: Jarak vertikal (gap) diturunkan drastis dari 70px jadi 45px */
+    gap: 45px 30px;
     width: 100%;
     max-width: 1100px;
-    margin-top: 80px; /* Jarak dari header judul */
+    /* KUNCI PERBAIKAN: Jarak dari judul ke kartu dikurangi drastis dari 80px jadi 45px */
+    margin-top: 45px;
 }
 
 /* Kotak Utama Card */
 .strat-card {
-    position: relative; /* Kunci untuk ikon melayang */
+    position: relative;
     background: #ffffff;
     border: 1.5px solid #dce7f7;
     border-radius: 20px;
-    padding: 55px 35px 30px; /* Padding atas dibesarkan agar teks tidak menabrak ikon */
+    /* KUNCI PERBAIKAN: Padding dalam kartu dikurangi agar tidak memakan tinggi layar */
+    padding: 40px 25px 20px;
     box-shadow: 0 10px 30px rgba(0, 123, 255, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Teks dipastikan rata tengah */
+    text-align: center;
 }
 
 /* Lingkaran Ikon Melayang di Atas Card */
 .strat-icon-wrapper {
     position: absolute;
-    top: -40px; /* Menarik ikon keluar setengah badan ke atas */
+    top: -30px;
+    /* Disesuaikan dengan ukuran ikon yang baru */
     left: 50%;
-    transform: translateX(-50%); /* Menjaga ikon tetap mutlak di tengah */
-    width: 80px;
-    height: 80px;
+    transform: translateX(-50%);
+    width: 60px;
+    /* Diperkecil dari 80px */
+    height: 60px;
+    /* Diperkecil dari 80px */
     background: #ffffff;
     border: 1.5px solid #dce7f7;
     border-radius: 50%;
@@ -491,15 +606,22 @@ main {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
 }
 
+.strat-icon-wrapper svg {
+    width: 25px;
+    /* Ikon sedikit disesuaikan ukurannya */
+    height: 25px;
+}
+
 /* Badge Judul Card (Warna Biru) */
 .strat-badge {
     background: #007bff;
     color: #ffffff;
-    padding: 8px 25px;
+    padding: 6px 20px;
     border-radius: 12px;
     font-weight: 800;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    /* Jarak ke paragraf diperkecil */
     letter-spacing: 1px;
 }
 
@@ -508,7 +630,10 @@ main {
     font-size: 1rem;
     color: #444;
     line-height: 1.6;
-    margin-bottom: auto; /* Mendorong divider ke bagian bawah jika teks pendek */
+    text-align: justify;
+    /* KUNCI: Membuat teks rata kiri dan kanan */
+    margin-bottom: auto;
+    padding: 0 15px;
 }
 
 /* Garis Pemisah dengan Titik di Bawah Card */
@@ -516,7 +641,8 @@ main {
     width: 50px;
     height: 2px;
     background-color: #dce7f7;
-    margin-top: 25px;
+    margin-top: 15px;
+    /* Jarak ke atas diperkecil */
     position: relative;
 }
 
@@ -528,70 +654,217 @@ main {
     transform: translate(-50%, -50%);
     width: 6px;
     height: 6px;
-    background-color: #1e4bb2; /* Titik biru di tengah garis */
+    background-color: #1e4bb2;
     border-radius: 50%;
+}
+
+/* =========================================
+   SECTION 5 (LAYANAN LAUNDRYSMART - OVERLAPPING)
+   ========================================= */
+.services-section {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 110px 5% 140px;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(180deg, #003380 0%, #80bdff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 10px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.service-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.service-card:hover {
+    /* Efek timbul dan sedikit membesar */
+    transform: translateY(-10px) scale(1.035);
+    box-shadow: 0 22px 45px rgba(0, 123, 255, 0.2), 0 8px 18px rgba(0, 0, 0, 0.06);
+    border-color: #80bdff;
+    z-index: 5;
+}
+
+.service-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    background-color: #cbd5e1;
+    /* KUNCI: z-index 2 memastikan elemen gambar beserta badge berada di atas .service-body */
+    z-index: 2;
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-badge {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    /* KUNCI UTAMA: z-index 10 membuat badge melayang di atas card dan tidak tertimpa */
+    z-index: 10;
+    pointer-events: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover .service-badge {
+    background-color: #0056b3;
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.service-body {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    padding: 26px 18px 18px;
+    text-align: left;
+}
+
+.service-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #003380;
+    margin-bottom: 6px;
+}
+
+.service-body p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.4;
 }
 
 /* =========================================
    RESPONSIVE DESIGN (MOBILE LAYOUT - MAX 430px)
    ========================================= */
 @media screen and (max-width: 430px) {
-    
+
     /* --- 1. HERO SECTION --- */
     .hero-title {
-        font-size: 2rem; /* Sedikit disesuaikan agar pas di layar 430px */
+        font-size: 2rem;
+        /* Sedikit disesuaikan agar pas di layar 430px */
     }
+
     .hero-logo {
         max-height: 100px;
     }
+
     .desc-primary {
         font-size: 1.1rem;
     }
+
     .desc-secondary {
         font-size: 0.9rem;
     }
 
     /* --- 2. CONTAINER 2 (TENTANG KAMI) --- */
     .dummy-section {
-        justify-content: flex-start; /* KUNCI: Mencegah konten terdorong dan terpotong ke atas */
-        padding-top: 130px;          /* Jarak aman yang lega agar tidak menabrak batas atas / navbar */
+        justify-content: flex-start;
+        /* KUNCI: Mencegah konten terdorong dan terpotong ke atas */
+        padding-top: 130px;
+        /* Jarak aman yang lega agar tidak menabrak batas atas / navbar */
         padding-bottom: 60px;
-        height: auto;                /* Membiarkan layar memanjang ke bawah mengikuti isi teks */
+        height: auto;
+        /* Membiarkan layar memanjang ke bawah mengikuti isi teks */
     }
 
     .teks-utama {
-        font-size: 2.2rem; 
+        font-size: 2.2rem;
     }
-    
+
     .about-grid {
-        flex-direction: column; 
+        flex-direction: column;
         gap: 30px;
     }
+
     .about-text {
-        text-align: center; 
+        text-align: center;
     }
+
     .deskripsi-tentang {
         text-align: center;
         font-size: 1rem;
     }
+
     .about-image {
         justify-content: center;
     }
+
     .about-image img {
         max-width: 100%;
     }
 
     /* --- 3. CONTAINER 3 (MENGAPA MEMILIH) --- */
     .features-section {
-        padding: 80px 5% 40px; 
-        justify-content: flex-start; /* Memastikan konten panjang tidak terpotong di HP */
+        padding: 80px 5% 40px;
+        justify-content: flex-start;
+        /* Memastikan konten panjang tidak terpotong di HP */
     }
+
     .features-title {
         font-size: 2rem;
         margin-bottom: 30px;
     }
+
     .features-grid {
-        grid-template-columns: 1fr; /* Memaksa grid menjadi 1 kolom vertikal */
+        grid-template-columns: 1fr;
+        /* Memaksa grid menjadi 1 kolom vertikal */
         gap: 15px;
     }
 
@@ -599,18 +872,44 @@ main {
     .strategy-section {
         padding: 80px 5% 40px;
     }
+
     .teks-strategi {
         font-size: 2rem;
     }
+
     .teks-pemasaran {
-        font-size: 1.5rem; /* Mengecilkan teks PEMASARAN agar aman dari batas tepi HP */
+        font-size: 1.5rem;
+        /* Mengecilkan teks PEMASARAN agar aman dari batas tepi HP */
     }
+
     .card-pemasaran {
         padding: 10px 20px;
     }
+
     .strategy-grid {
-        grid-template-columns: 1fr; /* Memaksa 2 kolom menjadi 1 kolom */
-        gap: 60px 20px; 
+        grid-template-columns: 1fr;
+        /* Memaksa 2 kolom menjadi 1 kolom */
+        gap: 60px 20px;
         margin-top: 60px;
+    }
+
+    /* --- 5. CONTAINER 5 (LAYANAN LAUNDRYSMART) --- */
+    .services-section {
+        padding: 90px 5% 100px;
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .services-subtitle {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
