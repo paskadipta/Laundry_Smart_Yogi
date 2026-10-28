@@ -15,7 +15,7 @@ body {
 }
 
 /* Jarak aman atas ditingkatkan agar konten tidak tertutup Navbar Melayang */
-main {  
+main {
     padding-top: 0;
 }
 
@@ -23,16 +23,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     /* KUNCI PERBAIKAN: Jarak 150px dipindah langsung ke dalam container ini */
-    padding: 150px 5% 80px; 
-    
+    padding: 150px 5% 80px;
+
     position: sticky;
-    top: 0; /* Sekarang akan langsung terkunci di tempat tanpa harus naik dulu */
+    top: 0;
+    /* Sekarang akan langsung terkunci di tempat tanpa harus naik dulu */
     z-index: 10;
-    
+
     /* Memastikan container memakan tinggi layar penuh agar aman saat ditimpa */
-    min-height: 100vh; 
+    min-height: 100vh;
 }
 
 /* =========================================
@@ -64,7 +65,8 @@ main {
    ========================================= */
 .vm-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Membagi layar menjadi 2 kolom seimbang */
+    grid-template-columns: 1fr 1fr;
+    /* Membagi layar menjadi 2 kolom seimbang */
     gap: 40px;
     width: 100%;
     max-width: 1250px;
@@ -124,7 +126,8 @@ main {
 }
 
 .badge-left .vm-icon-circle {
-    margin-right: -25px; /* Menumpuk sedikit ke kotak h2 */
+    margin-right: -25px;
+    /* Menumpuk sedikit ke kotak h2 */
 }
 
 .badge-left h2 {
@@ -148,7 +151,8 @@ main {
 }
 
 .circle-right {
-    margin-left: -25px; /* Menumpuk sedikit ke kotak h2 di sebelah kanan */
+    margin-left: -25px;
+    /* Menumpuk sedikit ke kotak h2 di sebelah kanan */
 }
 
 .line-right {
@@ -172,7 +176,8 @@ main {
     font-size: 1.25rem;
     line-height: 1.8;
     color: #444;
-    text-align: left; /* Rata Kiri */
+    text-align: left;
+    /* Rata Kiri */
     margin: 0;
 }
 
@@ -210,7 +215,8 @@ main {
     font-size: 1.05rem;
     line-height: 1.6;
     color: #444;
-    text-align: right; /* Rata Kanan */
+    text-align: right;
+    /* Rata Kanan */
     margin: 0;
 }
 
@@ -237,15 +243,18 @@ main {
 .mengapa-section {
     position: sticky;
     top: 0;
-    z-index: 20; /* Lebih tinggi dari vm-section agar menimpa dari atas */
-    background-color: #007bff; /* Background putih agar bersih menutupi Visi Misi */
+    z-index: 20;
+    /* Lebih tinggi dari vm-section agar menimpa dari atas */
+    background-color: #007bff;
+    /* Background putih agar bersih menutupi Visi Misi */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 100px 5% 80px;
-    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.04); /* Bayangan batas atas */
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.04);
+    /* Bayangan batas atas */
 }
 
 /* --- TEKS HEADER --- */
@@ -257,8 +266,8 @@ main {
 .mengapa-top {
     font-size: 2rem;
     font-weight: 600;
-    letter-spacing: 2px; 
-    color: rgba(255, 255, 255, 0.8); 
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 10px;
 }
 
@@ -266,28 +275,33 @@ main {
     font-size: 4.5rem;
     font-weight: 900;
     /* Gradasi Biru ke Putih/Biru sangat muda */
-    background: #ffffff; /* Fallback untuk browser lama */
+    background: #ffffff;
+    /* Fallback untuk browser lama */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
-    filter: drop-shadow(0px 4px 5px rgba(0,0,0,0.06));
+    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.06));
     letter-spacing: -1px;
 }
 
 /* --- GRID 5 KOLOM SEJAJAR --- */
 .mengapa-grid-5 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Otomatis membagi 5 kolom sama rata */
-    gap: 20px; 
+    grid-template-columns: repeat(5, 1fr);
+    /* Otomatis membagi 5 kolom sama rata */
+    gap: 20px;
     width: 100%;
-    max-width: 1350px; /* Dilebarkan sedikit agar 5 card muat dengan rapi */
+    max-width: 1350px;
+    /* Dilebarkan sedikit agar 5 card muat dengan rapi */
 }
 
 /* --- STYLING CARD MINIMALIS --- */
 .m-card-minimal {
     background: #ffffff;
-    border-radius: 15px; /* Ujung membulat yang lebih halus */
-    padding: 40px 25px;  /* Dibuat tinggi memanjang (portrait) */
+    border-radius: 15px;
+    /* Ujung membulat yang lebih halus */
+    padding: 40px 25px;
+    /* Dibuat tinggi memanjang (portrait) */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
     border: 1px solid #f2f2f2;
     display: flex;
@@ -298,7 +312,8 @@ main {
 }
 
 .m-card-minimal:hover {
-    transform: translateY(-8px); /* Efek melayang saat di-hover */
+    transform: translateY(-8px);
+    /* Efek melayang saat di-hover */
     box-shadow: 0 15px 35px rgba(0, 123, 255, 0.1);
 }
 
@@ -315,14 +330,16 @@ main {
 .m-title-minimal {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #111; /* Hitam pekat */
+    color: #111;
+    /* Hitam pekat */
     margin-bottom: 15px;
     line-height: 1.4;
 }
 
 .m-desc-minimal {
     font-size: 0.9rem;
-    color: #666; /* Abu-abu seperti referensi gambar */
+    color: #666;
+    /* Abu-abu seperti referensi gambar */
     line-height: 1.6;
     margin: 0;
 }
@@ -333,8 +350,8 @@ main {
 .kerjasama-section {
     position: sticky;
     top: 0;
-    z-index: 30; 
-    background-color: #ffffff; 
+    z-index: 30;
+    background-color: #ffffff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -362,8 +379,9 @@ main {
 
 .kerjasama-container {
     width: 100%;
-    max-width: 1150px; /* Diperlebar agar layout grid kiri & kanan tidak sempit */
-    background: #f4f8ff; 
+    max-width: 1150px;
+    /* Diperlebar agar layout grid kiri & kanan tidak sempit */
+    background: #f4f8ff;
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 10px 40px rgba(0, 51, 128, 0.06);
@@ -376,14 +394,17 @@ main {
     color: #333;
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 2px dashed #d0def2; /* Garis putus-putus pembatas teks dengan card bawah */
-    text-align: center; /* Rata tengah agar lebih rapi */
+    border-bottom: 2px dashed #d0def2;
+    /* Garis putus-putus pembatas teks dengan card bawah */
+    text-align: center;
+    /* Rata tengah agar lebih rapi */
 }
 
 /* --- GRID 2 KOLOM (KIRI & KANAN) --- */
 .k-grid-split {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Kolom kiri lebih lebar dibanding kolom kanan */
+    grid-template-columns: 1.5fr 1fr;
+    /* Kolom kiri lebih lebar dibanding kolom kanan */
     gap: 30px;
 }
 
@@ -399,7 +420,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content: space-between; /* Menjaga jarak 3 card vertikal merata */
+    justify-content: space-between;
+    /* Menjaga jarak 3 card vertikal merata */
 }
 
 /* --- CARD KIRI (ATURAN) --- */
@@ -412,7 +434,8 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #eef3fc;
     gap: 20px;
-    flex: 1; /* Mengisi tinggi secara rata */
+    flex: 1;
+    /* Mengisi tinggi secara rata */
 }
 
 .k-icon-box {
@@ -456,7 +479,8 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1; /* Membuat masing-masing card merenggang ke bawah mengisi ruang */
+    flex: 1;
+    /* Membuat masing-masing card merenggang ke bawah mengisi ruang */
 }
 
 .tahun-card:hover {
@@ -482,16 +506,17 @@ main {
    SECTION 4: TIMELINE (OVERLAPPING)
    ========================================= */
 .timeline-section {
-    position: sticky;
-    top: 0;
-    z-index: 40; /* Menimpa container 3 */
-    background-color: #007bff; /* Biru super soft sebagai pembeda */
+    position: relative;
+    z-index: 40;
+    /* Menimpa container 3 saat scroll ke bawah */
+    background-color: #007bff;
+    /* Biru super soft sebagai pembeda */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 120px 5% 80px;
+    padding: 120px 5% 100px;
     box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.04);
 }
 
@@ -503,8 +528,8 @@ main {
 .timeline-top {
     font-size: 2rem;
     font-weight: 600;
-    letter-spacing: 2px; 
-    color: rgba(255, 255, 255, 0.8); 
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 10px;
 }
 
@@ -518,8 +543,9 @@ main {
 
 .n3 h3 {
     position: absolute;
-    top: 20px; 
-    left: calc(35% + 55px); /* Geser ke kiri menghindari garis vertikal */
+    top: 20px;
+    left: calc(35% + 55px);
+    /* Geser ke kiri menghindari garis vertikal */
     width: max-content;
     max-width: 220px;
     text-align: right;
@@ -527,8 +553,9 @@ main {
 
 .n6 h3 {
     position: absolute;
-    top: 20px; 
-    right: calc(35% + 55px); /* Geser ke kanan menghindari garis vertikal */
+    top: 20px;
+    right: calc(35% + 55px);
+    /* Geser ke kanan menghindari garis vertikal */
     width: max-content;
     max-width: 220px;
     text-align: left;
@@ -550,13 +577,40 @@ main {
 }
 
 /* Urutan Posisi Kotak sesuai alur ular */
-.n1 { grid-column: 1; grid-row: 1; }
-.n2 { grid-column: 2; grid-row: 1; }
-.n3 { grid-column: 3; grid-row: 1; }
-.n4 { grid-column: 3; grid-row: 2; }
-.n5 { grid-column: 2; grid-row: 2; }
-.n6 { grid-column: 1; grid-row: 2; }
-.n7 { grid-column: 1; grid-row: 3; }
+.n1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.n2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.n3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.n4 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.n5 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.n6 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.n7 {
+    grid-column: 1;
+    grid-row: 3;
+}
 
 /* --- NODE / KOTAK --- */
 .t-node {
@@ -565,7 +619,7 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 100%; 
+    height: 100%;
 }
 
 .t-circle {
@@ -577,7 +631,8 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 5; /* Harus lebih tinggi dari garis */
+    z-index: 5;
+    /* Harus lebih tinggi dari garis */
     box-shadow: 0 5px 15px rgba(0, 51, 128, 0.2);
     margin-bottom: 25px;
 }
@@ -630,7 +685,8 @@ main {
 
 /* Garis Kanan (Posisi di node n1 & n2) */
 .line-right {
-    top: 40px; /* Setengah dari tinggi t-circle (80px) */
+    top: 40px;
+    /* Setengah dari tinggi t-circle (80px) */
     left: 50%;
     width: 100%;
     height: 6px;
@@ -649,191 +705,456 @@ main {
     top: 40px;
     left: calc(50% - 3px);
     width: 6px;
-    height: calc(100% + 50px); /* 100% tinggi row + 50px jarak antar row */
+    height: calc(100% + 50px);
+    /* 100% tinggi row + 50px jarak antar row */
 }
 
 /* Styling Dasar Garis */
 .line-bg {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: #cce0ff;
     border-radius: 3px;
 }
 
 .line-active {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: #ffffff;
     border-radius: 3px;
 }
 
 /* Origin Transform Animasi GSAP agar mulainya dari arah yang benar */
-.line-right .line-active { transform-origin: left center; transform: scaleX(0); }
-.line-left .line-active { transform-origin: right center; transform: scaleX(0); }
-.line-down .line-active { transform-origin: top center; transform: scaleY(0); }
+.line-right .line-active {
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+
+.line-left .line-active {
+    transform-origin: right center;
+    transform: scaleX(0);
+}
+
+.line-down .line-active {
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+
+/* =========================================
+   SECTION 5: LOKASI OUTLET (OVERLAPPING)
+   ========================================= */
+.outlet-section {
+    position: relative;
+    z-index: 50;
+    /* Di atas timeline (z-index: 40) agar bisa menimpa dengan efek overlapping */
+    background-color: #ffffff;
+    /* Latar putih bersih sesuai referensi */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5% 80px;
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.outlet-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+}
+
+.outlet-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(180deg, #003380 0%, #80bfff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.outlet-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.outlet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1250px;
+}
+
+/* Styling Card ala Referensi */
+.outlet-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #e0e6ed;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.outlet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.1);
+}
+
+.outlet-img {
+    width: 100%;
+    height: 190px;
+    background-color: #f4f8ff;
+    /* Fallback warna jika gambar belum ada */
+    object-fit: cover;
+}
+
+.outlet-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.outlet-region {
+    font-size: 0.85rem;
+    color: #007bff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.outlet-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.outlet-address {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.outlet-link {
+    font-size: 0.95rem;
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.outlet-link:hover {
+    color: #003380;
+}
 
 
 /* =========================================
    MOBILE LAYOUT RESPONSIVE (MAX 430PX)
    ========================================= */
 @media (max-width: 430px) {
+
     /* 1. MATIKAN OVERLAPPING DI HP AGAR SEMUA KARTU TERBACA FULL & JELAS */
     /* MATIKAN STICKY CSS MURNI, GSAP YANG AKAN AMBIL ALIH OVERLAPPINGNYA */
-    .vm-section, 
-    .mengapa-section, 
-    .kerjasama-section, 
+    .vm-section,
+    .mengapa-section,
+    .kerjasama-section,
     .timeline-section {
-        position: relative !important; 
+        position: relative !important;
         top: auto !important;
         bottom: auto !important;
-        padding: 90px 5% 120px !important; /* Padding bawah ekstra lega */
+        padding: 90px 5% 120px !important;
+        /* Padding bawah ekstra lega */
         min-height: auto !important;
         box-shadow: none !important;
     }
 
     /* 2. CONTAINER 1: VISI & MISI */
-    .vm-title { font-size: 2.2rem; }
-    .vm-grid { 
-        grid-template-columns: 1fr; 
-        gap: 30px; 
+    .vm-title {
+        font-size: 2.2rem;
+    }
+
+    .vm-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     /* 2. CONTAINER 1: VISI & MISI */
-    .vm-title { font-size: 2.2rem; }
-    .vm-grid { 
-        grid-template-columns: 1fr; /* Berubah jadi 1 kolom (atas-bawah) */
-        gap: 30px; 
+    .vm-title {
+        font-size: 2.2rem;
     }
-    .vm-card { padding: 25px 20px; }
-    .vm-text-left { font-size: 1.05rem; }
-    
+
+    .vm-grid {
+        grid-template-columns: 1fr;
+        /* Berubah jadi 1 kolom (atas-bawah) */
+        gap: 30px;
+    }
+
+    .vm-card {
+        padding: 25px 20px;
+    }
+
+    .vm-text-left {
+        font-size: 1.05rem;
+    }
+
     /* Merapikan Badge agar rata kiri semua di HP */
-    .badge-left, .badge-right { justify-content: flex-start; margin: 0 0 15px 0; }
-    .badge-left .vm-icon-circle, .circle-right { margin: 0 15px 0 0; } 
-    .badge-left h2, .badge-right h2 { padding: 8px 25px; font-size: 1.4rem; }
-    .line-left, .line-right { display: none; } /* Sembunyikan garis hiasan agar hemat ruang */
-    
-    /* Merapikan List Misi agar teksnya rata kiri di HP */
-    .list-right li { 
-        justify-content: flex-start; 
-        flex-direction: row-reverse; /* Pindahkan ikon ke kiri */
-        gap: 15px; 
+    .badge-left,
+    .badge-right {
+        justify-content: flex-start;
+        margin: 0 0 15px 0;
     }
-    .list-right p { text-align: left; font-size: 1rem; }
+
+    .badge-left .vm-icon-circle,
+    .circle-right {
+        margin: 0 15px 0 0;
+    }
+
+    .badge-left h2,
+    .badge-right h2 {
+        padding: 8px 25px;
+        font-size: 1.4rem;
+    }
+
+    .line-left,
+    .line-right {
+        display: none;
+    }
+
+    /* Sembunyikan garis hiasan agar hemat ruang */
+
+    /* Merapikan List Misi agar teksnya rata kiri di HP */
+    .list-right li {
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+        /* Pindahkan ikon ke kiri */
+        gap: 15px;
+    }
+
+    .list-right p {
+        text-align: left;
+        font-size: 1rem;
+    }
 
     /* 3. CONTAINER 2: MENGAPA MEMILIH */
-    .mengapa-top { font-size: 1.4rem; }
-    .mengapa-bottom { font-size: 2.5rem; letter-spacing: 0; }
-    .mengapa-grid-5 { 
-        grid-template-columns: 1fr; /* 5 Card ditumpuk vertikal */
-        gap: 15px; 
+    .mengapa-top {
+        font-size: 1.4rem;
     }
-    .m-card-minimal { padding: 25px 20px; }
+
+    .mengapa-bottom {
+        font-size: 2.5rem;
+        letter-spacing: 0;
+    }
+
+    .mengapa-grid-5 {
+        grid-template-columns: 1fr;
+        /* 5 Card ditumpuk vertikal */
+        gap: 15px;
+    }
+
+    .m-card-minimal {
+        padding: 25px 20px;
+    }
 
     /* 4. CONTAINER 3: SISTEM KERJASAMA */
-    .kerjasama-title { font-size: 2.2rem; }
-    .kerjasama-container { padding: 25px 15px; }
-    .k-top-text { font-size: 1rem; padding-bottom: 20px; margin-bottom: 20px; }
-    .k-grid-split { 
-        grid-template-columns: 1fr; /* Kolom kiri & kanan ditumpuk */
-        gap: 20px; 
+    .kerjasama-title {
+        font-size: 2.2rem;
     }
-    .k-row { 
-        padding: 15px; 
-        flex-direction: column; /* Ikon dan teks aturan ditumpuk */
-        text-align: center; 
-        gap: 15px; 
+
+    .kerjasama-container {
+        padding: 25px 15px;
     }
-    .k-content p { text-align: center; font-size: 1rem; }
-    .tahun-card { padding: 15px; }
+
+    .k-top-text {
+        font-size: 1rem;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .k-grid-split {
+        grid-template-columns: 1fr;
+        /* Kolom kiri & kanan ditumpuk */
+        gap: 20px;
+    }
+
+    .k-row {
+        padding: 15px;
+        flex-direction: column;
+        /* Ikon dan teks aturan ditumpuk */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .k-content p {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .tahun-card {
+        padding: 15px;
+    }
 
     /* 5. CONTAINER 4: TIMELINE */
-    .timeline-top { font-size: 1.4rem; }
-    .timeline-bottom { font-size: 1.8rem; }
-    
+    .timeline-top {
+        font-size: 1.4rem;
+    }
+
+    .timeline-bottom {
+        font-size: 1.8rem;
+    }
+
     /* Mematikan sistem Grid dan mengubahnya jadi tumpukan Flex vertikal simpel */
-    .timeline-grid { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 30px; 
+    .timeline-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
-    .t-node { width: 100%; }
-    
+
+    .t-node {
+        width: 100%;
+    }
+
     /* Sembunyikan garis desktop karena alur ularnya dimatikan */
-    .line-box { display: none !important; } 
-    
-    /* Reset posisi absolut pada teks Node 3 dan 6 agar kembali ke tengah */
-    .n3 h3, .n6 h3 { 
-        position: static; 
-        text-align: center; 
-        max-width: 100%; 
-        margin-top: 0; 
+    .line-box {
+        display: none !important;
     }
-    
-    .t-circle { margin-bottom: 15px; width: 65px; height: 65px; }
-    .t-node h3 { font-size: 1.1rem; }
-    
+
+    /* Reset posisi absolut pada teks Node 3 dan 6 agar kembali ke tengah */
+    .n3 h3,
+    .n6 h3 {
+        position: static;
+        text-align: center;
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .t-circle {
+        margin-bottom: 15px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .t-node h3 {
+        font-size: 1.1rem;
+    }
+
     /* List deskripsi di node 4 */
-    .t-list { 
-        font-size: 0.9rem; 
-        padding-left: 0; 
-        text-align: left; 
-        display: inline-block; /* Membantu memusatkan list */
+    .t-list {
+        font-size: 0.9rem;
+        padding-left: 0;
+        text-align: left;
+        display: inline-block;
+        /* Membantu memusatkan list */
     }
 
     /* 5. CONTAINER 4: TIMELINE (PROFESSIONAL MOBILE LAYOUT) */
-    .timeline-top { font-size: 1.4rem; }
-    .timeline-bottom { font-size: 1.8rem; }
-    
-    .timeline-grid { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 40px; /* Jarak antar step */
+    .timeline-top {
+        font-size: 1.4rem;
+    }
+
+    .timeline-bottom {
+        font-size: 1.8rem;
+    }
+
+    .timeline-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        /* Jarak antar step */
         position: relative;
     }
-    
+
     /* Ubah layout Node jadi menyamping (Kiri: Ikon, Kanan: Teks) */
-    .t-node { 
+    .t-node {
         width: 100%;
-        flex-direction: row; 
+        flex-direction: row;
         align-items: flex-start;
         text-align: left;
         gap: 20px;
     }
-    
-    .t-circle { 
-        margin-bottom: 0; 
-        width: 60px; 
-        height: 60px; 
+
+    .t-circle {
+        margin-bottom: 0;
+        width: 60px;
+        height: 60px;
         flex-shrink: 0;
-        z-index: 2; /* Agar ikon berada di atas garis */
+        z-index: 2;
+        /* Agar ikon berada di atas garis */
     }
-    
-    .t-node h3 { 
-        font-size: 1.1rem; 
-        margin-top: 15px; /* Sejajarkan teks dengan tengah lingkaran */
+
+    .t-node h3 {
+        font-size: 1.1rem;
+        margin-top: 15px;
+        /* Sejajarkan teks dengan tengah lingkaran */
     }
-    
+
     /* Merapikan posisi teks n3 dan n6 yang sebelumnya absolute di desktop */
-    .n3 h3, .n6 h3 { position: static; max-width: 100%; text-align: left; margin-top: 15px; }
-    
+    .n3 h3,
+    .n6 h3 {
+        position: static;
+        max-width: 100%;
+        text-align: left;
+        margin-top: 15px;
+    }
+
     /* Merapikan list pada node ke-4 */
-    .t-list { padding-left: 20px; font-size: 0.9rem; margin-top: 10px; }
-    
+    .t-list {
+        padding-left: 20px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
     /* MENGHIDUPKAN KEMBALI GARIS KHUSUS MOBILE */
-    .line-box { 
-        display: block !important; 
+    .line-box {
+        display: block !important;
         width: 4px !important;
-        height: calc(100% + 40px) !important; /* Tinggi node + jarak gap */
-        top: 30px !important; /* Mulai dari tengah lingkaran (60px/2) */
-        left: 28px !important; /* Tepat di tengah lingkaran */
-        right: auto !important; /* Matikan settingan desktop */
+        height: calc(100% + 40px) !important;
+        /* Tinggi node + jarak gap */
+        top: 30px !important;
+        /* Mulai dari tengah lingkaran (60px/2) */
+        left: 28px !important;
+        /* Tepat di tengah lingkaran */
+        right: auto !important;
+        /* Matikan settingan desktop */
         z-index: 1 !important;
     }
-    
+
     .line-active {
-        transform-origin: top center !important; /* Pastikan garis merambat ke bawah */
+        transform-origin: top center !important;
+        /* Pastikan garis merambat ke bawah */
     }
-    
-    .n7 .line-box { display: none !important; } /* Sembunyikan garis di node terakhir */
+
+    /* Sembunyikan garis di node terakhir */
+    .n7 .line-box {
+        display: none !important;
+    }
+
+    /* 6. CONTAINER 5: LOKASI OUTLET */
+    .outlet-section {
+        padding: 80px 5% 60px !important;
+        min-height: auto !important;
+    }
+
+    .outlet-title {
+        font-size: 2.2rem;
+    }
+
+    .outlet-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
