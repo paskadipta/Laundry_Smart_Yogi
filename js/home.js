@@ -229,3 +229,40 @@ gsap.to("#strategi", {
         scrub: true
     }
 });
+
+// =========================================
+// ANIMASI CONTAINER 6 (PAYMENT)
+// =========================================
+const tl6 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#payment",
+        start: "top 70%",
+        toggleActions: "play none none none"
+    },
+    defaults: { ease: "power3.out", duration: 1 }
+});
+
+// Ganti blok tl6.from bagian kedua menjadi seperti ini:
+tl6.from(".payment-label, .payment-title", {
+    y: 50,
+    opacity: 0,
+    stagger: 0.2
+})
+    // Menargetkan wrapper dan deskripsi baru
+    .from(".payment-marquee-wrapper, .payment-desc", {
+        y: 60,
+        opacity: 0,
+        stagger: 0.2
+    }, "-=0.6");
+
+// Efek Parallax: Container 5 (Layanan) ikut terdorong naik saat Container 6 (Payment) masuk
+gsap.to("#layanan", {
+    y: -150,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#payment",
+        start: "top 100%", // Diubah ke 100% agar section 5 terlihat utuh lebih lama
+        end: "top 0%",
+        scrub: true
+    }
+});
