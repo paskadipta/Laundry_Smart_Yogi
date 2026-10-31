@@ -36,6 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
             pin: true,
             pinSpacing: false
         });
+
+
+
+        // Pin outlet-section saat bagian bawahnya sudah terlihat penuh,
+        // sehingga section ulasan menimpa (overlapping) outlet secara mulus
+        ScrollTrigger.create({
+            trigger: ".outlet-section",
+            start: "bottom bottom",
+            endTrigger: ".ulasan-section",
+            end: "top top",
+            pin: true,
+            pinSpacing: false
+        });
     });
 
     // ==========================================
@@ -210,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileMm.add("(max-width: 430px)", () => {
         // [KODE LAMA] Daftar container yang mau kita bikin tumpang tindih
-        const sectionsToPin = [".vm-section", ".mengapa-section", ".kerjasama-section"];
+        const sectionsToPin = [".vm-section", ".mengapa-section", ".kerjasama-section", ".outlet-section"];
         sectionsToPin.forEach(sec => {
             ScrollTrigger.create({
                 trigger: sec,
@@ -268,46 +281,53 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const dataOutlets = [
         {
-            daerah: "BEKASI",
-            nama: "LaundrySmart Bekasi Timur",
-            alamat: "Jl. Nusantara No. 10, Aren Jaya, Kec. Bekasi Timur, Kota Bekasi, Jawa Barat",
-            link: "https://goo.gl/maps/contoh1",
-            gambar: "../asset/foto_1.jpg" // Ganti path sesuai gambar fisik tokomu
+            daerah: "Jagakarsa",
+            nama: "LaundrySmart Jagakarsa",
+            alamat: "Jl. Jagakarsa 1 No.128, RT.4/RW.7, Jagakarsa, Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
+            link: "https://maps.app.goo.gl/hob5HmBFxa25XuBL7",
+            gambar: "../asset/Jagakarsa.jpeg"
         },
         {
-            daerah: "JAKARTA SELATAN",
-            nama: "LaundrySmart Tebet",
-            alamat: "Jl. Tebet Barat Dalam Raya No. 45, Tebet, Jakarta Selatan",
-            link: "https://goo.gl/maps/contoh2",
-            gambar: "../asset/foto_1.jpg"
+            daerah: "Dukuh",
+            nama: "LaundrySmart Dukuh",
+            alamat: "Jl. Bumi Pratama III No.52A, RT.1/RW.3, Dukuh, Kec. Kramat jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta",
+            link: "https://maps.app.goo.gl/M42TGks581nKoMtg7",
+            gambar: "../asset/Dukuh.jpg"
         },
         {
-            daerah: "DEPOK",
-            nama: "LaundrySmart Margonda",
-            alamat: "Jl. Margonda Raya No. 100, Pondok Cina, Beji, Kota Depok",
-            link: "https://goo.gl/maps/contoh3",
-            gambar: "../asset/foto_1.jpg"
+            daerah: "Jatiasih",
+            nama: "LaundrySmart Jatiasih",
+            alamat: "Jl. Parpostel No.88, RT.001/RW.007, Jatiluhur, Kec. Jatiasih, Kota Bks, Jawa Barat",
+            link: "https://maps.app.goo.gl/42RWAvVhWwBSzYjK8",
+            gambar: "../asset/Jatiasih.jpeg"
         },
         {
-            daerah: "TANGERANG SELATAN",
-            nama: "LaundrySmart Pamulang",
-            alamat: "Jl. Surya Kencana No. 8, Pamulang Barat, Kota Tangerang Selatan",
-            link: "https://goo.gl/maps/contoh4",
-            gambar: "../asset/foto_1.jpg"
+            daerah: "Cilodong",
+            nama: "LaundrySmart Cilodong",
+            alamat: "HR5P+43P, Jl. Raya Abdul Gani, Kalibaru, Kec. Cilodong, Kota Depok, Jawa Barat",
+            link: "https://maps.app.goo.gl/6o5uagiKoGJmqVQN9",
+            gambar: "../asset/Cilodong.jpeg"
         },
         {
-            daerah: "BOGOR",
-            nama: "LaundrySmart Cibinong",
-            alamat: "Jl. Raya Bogor Km. 42, Cibinong, Kabupaten Bogor",
-            link: "https://goo.gl/maps/contoh5",
-            gambar: "../asset/foto_1.jpg"
+            daerah: "Pondok Aren",
+            nama: "LaundrySmart Pondok Aren",
+            alamat: "Jl. Raya Pd. Aren No.1, Jurang Mangu Barat, Kec. Pd. Aren, Kota Tangerang Selatan, Banten",
+            link: "https://maps.app.goo.gl/RcnCqHexVn1ZcyhG8",
+            gambar: "../asset/Pondok Aren.jpeg"
         },
         {
-            daerah: "BANDUNG",
-            nama: "LaundrySmart Antapani",
-            alamat: "Jl. Terusan Jakarta No. 50, Antapani Tengah, Kota Bandung",
-            link: "https://goo.gl/maps/contoh6",
-            gambar: "../asset/foto_1.jpg"
+            daerah: "Cikarang",
+            nama: "LaundrySmart Cikarang",
+            alamat: "Jl. Villa Mutiara Cikarang No.29, Ciantra, Cikarang Sel., Kabupaten Bekasi, Jawa Barat",
+            link: "https://maps.app.goo.gl/C1mHahJcUF8d6QiP8",
+            gambar: "../asset/Cikarang.jpeg"
+        },
+        {
+            daerah: "Ciledug",
+            nama: "LaundrySmart Ciledug",
+            alamat: "Jl. Sunan Gn. Jati No.27, RT.002/RW.008, Paninggilan, PaninggilanKec. Ciledug, Kota Tangerang, Banten",
+            link: "https://maps.app.goo.gl/AQbgWaYHPK6ZF1XbA",
+            gambar: "../asset/Ciledug.jpeg"
         }
     ];
 
@@ -348,4 +368,124 @@ document.addEventListener("DOMContentLoaded", () => {
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
         "-=0.3"
     );
+
+    // ==========================================
+    // DATA & RENDER SECTION 6: ULASAN MANUAL
+    // ==========================================
+    const curatedReviews = [
+        {
+            author_name: "Hendrik Setiawan",
+            profile_photo_url: "../asset/Ulasan 1.png",
+            rating: 5,
+            text: "Pelayanan cepat wangi dan bersih",
+            review_url: "https://maps.app.goo.gl/usPrafkLdswKayBP8" // Ganti dengan link Share dari ulasan asli
+        },
+        {
+            author_name: "Galang Mahameru",
+            profile_photo_url: "../asset/Ulasan 2.png",
+            rating: 5,
+            text: "Bersih,wangi dan customer smile",
+            review_url: "https://maps.app.goo.gl/1cujHB4uF3Jp2MpD7"
+        },
+        {
+            author_name: "Mohammad Dheto",
+            profile_photo_url: "../asset/Ulasan 3.png",
+            rating: 5,
+            text: "Bersih Dan Wangi",
+            review_url: "https://maps.app.goo.gl/6WB4gUWvUZdHjZSd6"
+        },
+        {
+            author_name: "Ratna Kumari",
+            profile_photo_url: "../asset/Ulasan 4.png",
+            rating: 5,
+            text: "Pelayanannya baik dan memuaskan. Ramah dan hasilnya bersih dan wangi",
+            review_url: "https://maps.app.goo.gl/VZcNn9HF4FDTgyzs9"
+        }
+    ];
+
+    const ulasanContainer = document.getElementById("ulasan-container");
+
+    if (ulasanContainer) {
+        ulasanContainer.innerHTML = curatedReviews.map(review => `
+            <div class="review-card">
+                <div class="stars">${"★".repeat(review.rating)}</div>
+                <p class="review-text">"${review.text}"</p>
+                <div class="author-profile">
+                    <img src="${review.profile_photo_url}" alt="${review.author_name}">
+                    <div class="author-meta">
+                        <h4>${review.author_name}</h4>
+                        <a href="${review.review_url}" target="_blank" class="review-link">Lihat Ulasan Ini</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Animasi GSAP Ulasan
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: ".ulasan-section",
+            start: "top 60%",
+            toggleActions: "play none none reverse"
+        }
+    })
+        .fromTo(".ulasan-header",
+            { opacity: 0, x: -40 },
+            { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }
+        )
+        .fromTo(".review-card",
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: "power2.out" },
+            "-=0.3"
+        );
+
+
+    // ==========================================
+    // DRAG TO SCROLL (UNTUK MOBILE / MOUSE DRAG)
+    // ==========================================
+    function enableHorizontalDrag(slider) {
+        if (!slider) return;
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isDragging = false;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            isDragging = false;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            setTimeout(() => { isDragging = false; }, 50);
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            if (Math.abs(walk) > 5) {
+                isDragging = true;
+            }
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Mencegah link terbuka jika pengguna sedang menyeret (drag)
+        slider.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }, true);
+    }
+
+    enableHorizontalDrag(outletContainer);
+    enableHorizontalDrag(ulasanContainer);
 });

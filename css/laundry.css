@@ -862,6 +862,96 @@ main {
     color: #003380;
 }
 
+/* =========================================
+   SECTION 6: Ulasan Pelanggan (OVERLAPPING)
+   ========================================= */
+.ulasan-section {
+    position: relative;
+    z-index: 60;
+    background-color: #007bff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5% 80px;
+    box-shadow: 0 -15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ulasan-header {
+    width: 100%;
+    max-width: 1250px;
+    margin-bottom: 40px;
+    text-align: center;
+    /* Memastikan posisi judul ada di tengah */
+}
+
+.ulasan-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #ffffff;
+    /* Warna teks judul diubah menjadi putih */
+}
+
+.ulasan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1250px;
+}
+
+.review-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 35px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f4f8;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #f5b301;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.author-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-meta h4 {
+    font-size: 1.1rem;
+    color: #111b2b;
+    margin: 0;
+    /* Hapus margin bawah agar posisi nama pas di tengah sejajar dengan foto */
+    font-weight: 700;
+}
+
+.author-meta span {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+
 
 /* =========================================
    MOBILE LAYOUT RESPONSIVE (MAX 430PX)
@@ -1143,10 +1233,11 @@ main {
         display: none !important;
     }
 
-    /* 6. CONTAINER 5: LOKASI OUTLET */
+    /* 6. CONTAINER 5: LOKASI OUTLET (HORIZONTAL SCROLL / 1 ROW) */
     .outlet-section {
         padding: 80px 5% 60px !important;
         min-height: auto !important;
+        overflow: hidden;
     }
 
     .outlet-title {
@@ -1154,7 +1245,86 @@ main {
     }
 
     .outlet-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: stretch;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding: 10px 5px 25px;
+        width: 100%;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .outlet-grid:active {
+        cursor: grabbing;
+    }
+
+    .outlet-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .outlet-card {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+        height: auto;
+    }
+
+    .outlet-card img {
+        -webkit-user-drag: none;
+        user-select: none;
+        pointer-events: none;
+    }
+
+
+    /* 7. CONTAINER 6: ULASAN PELANGGAN (HORIZONTAL SCROLL / 1 ROW) */
+    .ulasan-section {
+        padding: 80px 5% 60px !important;
+        min-height: auto !important;
+        box-shadow: none !important;
+        overflow: hidden;
+    }
+
+    .ulasan-title {
+        font-size: 2.2rem;
+    }
+
+    .ulasan-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: stretch;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding: 10px 5px 25px;
+        width: 100%;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        cursor: grab;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .ulasan-grid:active {
+        cursor: grabbing;
+    }
+
+    .ulasan-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .review-card {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: center;
+        height: auto;
+        padding: 25px 20px;
     }
 }
